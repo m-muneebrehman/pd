@@ -1,0 +1,16 @@
+# ninja log v6
+14422	34776	7564888046215006	CMakeFiles/palagiarism.dir/aboutproj.cpp.obj	cacaf750c99a3548
+223	14166	7564888038844031	palagiarism_autogen/timestamp	a9fac5a6556a89fe
+14247	35079	7564888044474948	CMakeFiles/palagiarism.dir/aboutus.cpp.obj	f2b6b6984e93a403
+14348	38135	7564888045481891	CMakeFiles/palagiarism.dir/palagiarism.cpp.obj	6eafe28cd578eaaa
+223	14166	7564888038844031	C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/palagiarism_autogen/timestamp	a9fac5a6556a89fe
+223	14166	7564888038844031	palagiarism_autogen/mocs_compilation.cpp	a9fac5a6556a89fe
+14191	34291	7564888043912122	CMakeFiles/palagiarism.dir/main.cpp.obj	371f36cecd9521c2
+14171	31229	7564888043711413	CMakeFiles/palagiarism.dir/palagiarism_autogen/mocs_compilation.cpp.obj	b85bec334409a886
+223	14166	7564888038844031	C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/palagiarism_autogen/mocs_compilation.cpp	a9fac5a6556a89fe
+14208	33583	7564888044086499	CMakeFiles/palagiarism.dir/mainwindow.cpp.obj	24162f5259b5c5b8
+14330	38286	7564888045301460	CMakeFiles/palagiarism.dir/database.cpp.obj	fdf7192846781024
+14367	28037	7564888045660915	CMakeFiles/palagiarism.dir/result.cpp.obj	993cccbe21f975bd
+14274	33602	7564888044741928	CMakeFiles/palagiarism.dir/demo.cpp.obj	59e2bfbb0985866b
+14225	36564	7564888044241321	CMakeFiles/palagiarism.dir/secpage.cpp.obj	f9464ca78a20d79a
+38287	39647	7564888284864749	palagiarism.exe	3fcd19c7117b9533

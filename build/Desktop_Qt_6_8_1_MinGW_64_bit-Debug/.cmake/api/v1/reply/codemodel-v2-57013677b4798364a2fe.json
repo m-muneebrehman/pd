@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d413d8eb738c2704747e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "palagiarism",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "palagiarism::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-palagiarism-Debug-fad1b0496acd333bdc22.json",
+					"name" : "palagiarism",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "palagiarism_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-palagiarism_autogen-Debug-c7ced5920a42206799fc.json",
+					"name" : "palagiarism_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "palagiarism_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-palagiarism_autogen_timestamp_deps-Debug-19ecd03bd51e60db87ca.json",
+					"name" : "palagiarism_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug",
+		"source" : "C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
