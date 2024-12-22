@@ -629,10 +629,12 @@ palagiarism_autogen/timestamp: \
 	C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeRCCompiler.cmake \
 	C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeSystem.cmake \
 	C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/palagiarism_autogen/moc_predefs.h \
+	C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/calculations.h \
 	C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/database.cpp \
 	C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/database.h \
 	C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/demo.cpp \
 	C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/demo.h \
+	C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/globals.h \
 	C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/main.cpp \
 	C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/mainwindow.cpp \
 	C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/mainwindow.h \
@@ -642,6 +644,10 @@ palagiarism_autogen/timestamp: \
 	C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/result.h \
 	C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/secpage.cpp \
 	C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/secpage.h \
+	C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/stringOperations.h \
+	C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/tests.h \
+	C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/tokenization.h \
+	C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/verdict.h \
 	C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/aboutproj.ui \
 	C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/aboutus.ui \
 	C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/database.ui \
