@@ -1,7 +1,7 @@
 #include "database.h"
 #include "ui_database.h"
 #include "demo.h"  // Include Demo header file
-
+#include <windows.h>
 #include <QMessageBox>
 #include <QCoreApplication>
 #include <QFileInfo>
@@ -19,7 +19,6 @@ Database::Database(Demo *demo, QWidget *parent)
 
     // Set up the database folder path
     QDir appDir(QCoreApplication::applicationDirPath());
-    appDir.cdUp();  // Go one level up
     databaseFolderPath = appDir.absolutePath() + "/database";
 
     // Create the database folder if it doesn't exist
@@ -117,6 +116,7 @@ void Database::on_pushButton_clicked()
 // Handle the "back" button (to return to the parent window)
 void Database::on_back_clicked()
 {
-    this->hide();      // Hide the current window (Database)
     _demo->show();     // Show the Demo window again
+    Sleep(500);
+    this->hide();      // Hide the current window (Database)
 }

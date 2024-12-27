@@ -26,14 +26,12 @@ QDialog {
     border-radius: 12px; /* Rounded edges */
 }
 
-/* Style for labels with neon effect */
+/* Style for labels */
 QLabel {
     color: #00ffcc; /* Neon aqua */
     font-size: 20px; /* Slightly smaller font size */
     font-weight: bold;
     text-align: center;
-    text-shadow: 0px 0px 8px rgba(0, 255, 204, 0.8), /* Outer neon glow */
-                 0px 0px 4px rgba(0, 255, 204, 0.6); /* Inner glow */
     font-family: 'Cyber Alert', sans-serif; /* Cyber Alert font */
 }
 
@@ -44,20 +42,16 @@ QPushButton {
     color: #1c2833; /* Dark text */
     border: none; /* No border */
     border-radius: 20px; /* Rounded edges */
-    padding: 10px 20px; /* Adjusted padding for smaller size */
-    font-size: 16px; /* Reduced font size */
+    padding: 10px 20px; /* Adjusted padding */
+    font-size: 16px; /* Font size */
     font-weight: bold;
     font-family: 'Cyber Alert', sans-serif; /* Cyber Alert font */
-    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.3); /* Glow effect */
-    transition: all 0.3s ease-in-out;
 }
 
 /* Hover effect for buttons */
 QPushButton:hover {
     background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
                                 stop:0 #34e89e, stop:1 #0f3443); /* Vibrant gradient */
-    transform: scale(1.1); /* Slightly enlarge */
-    box-shadow: 0px 10px 15px rgba(0, 255, 170, 0.7); /* Neon glow */
     color: #ecf0f1; /* Switch text to light for contrast */
 }
 
@@ -67,16 +61,14 @@ QLineEdit {
     color: #ecf0f1; /* Light text */
     border: 2px solid #00d1b2; /* Neon border */
     border-radius: 12px; /* Adjusted for smaller size */
-    padding: 6px 10px; /* Adjusted padding for smaller input */
-    font-size: 14px; /* Reduced font size */
+    padding: 6px 10px; /* Adjusted padding */
+    font-size: 14px; /* Font size */
     font-family: 'Cyber Alert', sans-serif; /* Cyber Alert font */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
 /* Focus effect for line edits */
 QLineEdit:focus {
     border-color: #34e89e; /* Change border color when focused */
-    box-shadow: 0px 0px 10px rgba(52, 232, 158, 0.8); /* Neon glow on focus */
 }
 </string>
   </property>

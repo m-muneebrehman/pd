@@ -1,5 +1,6 @@
 #include "secpage.h"
 #include "ui_secpage.h"
+#include <windows.h>
 
 SecPage::SecPage(QWidget *parent)
     : QDialog(parent)
@@ -16,8 +17,9 @@ SecPage::~SecPage()
 void SecPage::on_Aboutus_clicked()
 {
     Aboutus = new aboutUs(this);
-    hide();
     Aboutus->show();
+    Sleep(500);
+    hide();
 }
 
 
@@ -25,6 +27,7 @@ void SecPage::on_Aboutpro_clicked()
 {
     aboutProj = new AboutProj(this);
     aboutProj->show();
+    Sleep(200);
     hide();
 }
 
@@ -32,8 +35,9 @@ void SecPage::on_Aboutpro_clicked()
 void SecPage::on_Demo_clicked()
 {
     demo = new Demo(this);
-    hide();
     demo->show();
+    Sleep(200);
+    hide();
 }
 
 

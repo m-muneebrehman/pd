@@ -454,6 +454,7 @@ C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/build/Desktop_Qt_6_8_1_MinGW_
   C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/aboutus.h \
   C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/database.h \
   C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/demo.h \
+  C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/globals.h \
   C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/palagiarism.h \
   C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/result.h \
   C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/secpage.h

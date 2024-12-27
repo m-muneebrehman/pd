@@ -17,6 +17,6 @@ aboutUs::~aboutUs()
 
 void aboutUs::on_back_clicked()
 {
-    this->hide();      // Hide the aboutUs dialog
     _secPage->show();  // Show the SecPage dialog again
+    this->hide();      // Hide the aboutUs dialog
 }

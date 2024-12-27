@@ -2,6 +2,7 @@
 #include "ui_aboutproj.h"
 #include "secpage.h"
 
+
 AboutProj::AboutProj(SecPage *secPage, QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::AboutProj)
@@ -17,6 +18,6 @@ AboutProj::~AboutProj()
 
 void AboutProj::on_back_clicked()
 {
-    this->hide();      // Hide the AboutProj dialog
     _secPage->show();  // Show the SecPage dialog again
+    this->hide();      // Hide the AboutProj dialog
 }

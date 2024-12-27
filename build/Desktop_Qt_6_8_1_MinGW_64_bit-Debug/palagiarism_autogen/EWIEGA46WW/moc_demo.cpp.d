@@ -449,5 +449,6 @@ C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/build/Desktop_Qt_6_8_1_MinGW_
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h \
   C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/database.h \
+  C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/globals.h \
   C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/palagiarism.h \
   C:/Users/ijaza/Desktop/Muneeb/frontend/palagiarism/result.h

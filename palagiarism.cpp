@@ -1,7 +1,7 @@
 #include "palagiarism.h"
 #include "ui_palagiarism.h"
 #include "demo.h"
-
+#include <windows.h>
 #include <QMimeData>
 #include <QFileDialog>
 #include <QFile>
@@ -47,8 +47,6 @@ void Palagiarism::dropEvent(QDropEvent *event)
 
             // Get the project directory by going up from the build directory
             QDir appDir(QCoreApplication::applicationDirPath());
-            appDir.cdUp(); // Go one level up (from build directory)
-            appDir.cdUp(); // Go another level up (to the project folder)
             QString targetFolder = appDir.absolutePath(); // Project folder path
 
             // Create the "target" folder if it doesn't exist
@@ -76,10 +74,14 @@ void Palagiarism::on_test_clicked()
 {
     // You can define functionality for the test button here
     QMessageBox::information(this, "Test", "Test button clicked.");
+    _result = new Result(this);
+    _result->show();
+    this->hide();
 }
 
 void Palagiarism::on_back_clicked()
 {
-    this->hide();       // Hide the current window (Plagiarism)
     _demo->show();      // Show the Demo window again
+    Sleep(500);
+    this->hide();       // Hide the current window (Plagiarism)
 }
