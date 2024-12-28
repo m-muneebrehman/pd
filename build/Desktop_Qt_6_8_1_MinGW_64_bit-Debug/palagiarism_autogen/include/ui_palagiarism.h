@@ -104,6 +104,7 @@ public:
         lineEdit = new QLineEdit(Palagiarism);
         lineEdit->setObjectName("lineEdit");
         lineEdit->setGeometry(QRect(290, 160, 211, 151));
+        lineEdit->setReadOnly(true);
         label = new QLabel(Palagiarism);
         label->setObjectName("label");
         label->setGeometry(QRect(240, 80, 401, 51));

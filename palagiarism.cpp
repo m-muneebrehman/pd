@@ -43,7 +43,16 @@ void Palagiarism::dropEvent(QDropEvent *event)
         if (!urlList.isEmpty()) {
             // Get the first file path
             QString sourceFilePath = urlList.first().toLocalFile();
-            ui->lineEdit->setText(sourceFilePath); // Set the file path in the QLineEdit
+
+            // Check if the file is a .txt file
+            QFileInfo fileInfo(sourceFilePath);
+            if (fileInfo.suffix().toLower() != "txt") {
+                QMessageBox::warning(this, "Invalid File", "Only .txt files are allowed. Please upload a valid .txt file.");
+                return;
+            }
+
+            // Set the file path in the QLineEdit
+            ui->lineEdit->setText(sourceFilePath);
 
             // Get the project directory by going up from the build directory
             QDir appDir(QCoreApplication::applicationDirPath());
@@ -55,14 +64,13 @@ void Palagiarism::dropEvent(QDropEvent *event)
             // Define the full target folder path
             QString targetFolderPath = targetFolder + "/target";
 
-            // Get the file name from the source file path
-            QFileInfo fileInfo(sourceFilePath);
+            // Define the target file path
             QString targetFilePath = targetFolderPath + "/" + fileInfo.fileName();
 
             // Copy the file to the target folder
             QFile file(sourceFilePath);
             if (file.copy(targetFilePath)) {
-                QMessageBox::information(this, "Success", "File saved to target folder: " + targetFilePath);
+                QMessageBox::information(this, "Success", "File saved successfully.");
             } else {
                 QMessageBox::warning(this, "Error", "Failed to copy file to target folder.");
             }
@@ -72,8 +80,26 @@ void Palagiarism::dropEvent(QDropEvent *event)
 
 void Palagiarism::on_test_clicked()
 {
-    // You can define functionality for the test button here
-    QMessageBox::information(this, "Test", "Test button clicked.");
+    // Get the file path from the QLineEdit
+    QString filePath = ui->lineEdit->text();
+
+    // Check if the file exists
+    if (filePath.isEmpty()) {
+        QMessageBox::warning(this, "Error", "Please upload a file before clicking Test.");
+        return;
+    }
+
+    // Check if the file is a .txt file
+    QFileInfo fileInfo(filePath);
+    if (fileInfo.suffix().toLower() != "txt") {
+        QMessageBox::warning(this, "Invalid File", "Only .txt files are allowed. Please upload a valid .txt file.");
+        return;
+    }
+
+    // Proceed with the plagiarism check (or other logic)
+    QMessageBox::information(this, "Test", "Test button clicked. File accepted.");
+
+    // Example: Open the Result window
     _result = new Result(this);
     _result->show();
     this->hide();
