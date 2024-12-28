@@ -10,6 +10,10 @@
 #include "tokenization.h"
 #include "palagiarism.h"
 
+#include <QFile>             // Include QFile
+#include <QFileInfo>         // Include QFileInfo
+#include <QMessageBox>       // Include QMessageBox
+
 using namespace std;
 
 /****Objects****/
@@ -138,6 +142,22 @@ void Result::processTargetFile(const std::string &targetFile)
     }
 
     displayResults(scores, matches);
+    moveFileToDatabase(targetFile);  // Move file after processing
+}
+
+void Result::moveFileToDatabase(const std::string &filePath)
+{
+    QString targetFilePath = QString::fromStdString(filePath);
+    QString databaseFilePath = QString::fromStdString(mGlobals.database) + "/" + QFileInfo(targetFilePath).fileName();
+
+    QFile targetFile(targetFilePath);
+    QFile databaseFile(databaseFilePath);
+
+    if (targetFile.rename(targetFilePath, databaseFilePath)) {
+        QMessageBox::information(this, "File Moved", "File has been moved to the database folder.");
+    } else {
+        QMessageBox::warning(this, "Error", "Failed to move the file to the database folder.");
+    }
 }
 
 void Result::displayResults(const std::vector<float> &scores, const std::vector<std::string> &matches)
