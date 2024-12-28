@@ -7,7 +7,7 @@
 #include <string>
 #include "globals.h" // Include the globals header
 
-class Palagiarism; //Forward Declaration
+class Palagiarism; // Forward Declaration
 
 namespace Ui {
 class Result;

@@ -26,7 +26,7 @@ QDialog {
 /* Style for labels with neon effect */
 QLabel {
     color: #00ffcc; /* Neon aqua */
-    font-size: 20px; /* Slightly smaller font size */
+    font-size: 24px; /* Increased font size */
     font-weight: bold;
     text-align: center;
     text-shadow: 0px 0px 8px rgba(0, 255, 204, 0.8), /* Outer neon glow */
@@ -41,8 +41,8 @@ QPushButton {
     color: #1c2833; /* Dark text */
     border: none; /* No border */
     border-radius: 20px; /* Rounded edges */
-    padding: 10px 20px; /* Adjusted padding for smaller size */
-    font-size: 16px; /* Reduced font size */
+    padding: 12px 24px; /* Adjusted padding for larger button */
+    font-size: 20px; /* Increased font size */
     font-weight: bold;
     font-family: 'Cyber Alert', sans-serif; /* Cyber Alert font */
     box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.3); /* Glow effect */
@@ -64,8 +64,8 @@ QLineEdit {
     color: #ecf0f1; /* Light text */
     border: 2px solid #00d1b2; /* Neon border */
     border-radius: 12px; /* Adjusted for smaller size */
-    padding: 6px 10px; /* Adjusted padding for smaller input */
-    font-size: 14px; /* Reduced font size */
+    padding: 8px 12px; /* Adjusted padding for larger input */
+    font-size: 30px; /* Increased font size */
     font-family: 'Cyber Alert', sans-serif; /* Cyber Alert font */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
@@ -80,8 +80,8 @@ QLineEdit:focus {
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>10</y>
+     <x>320</x>
+     <y>20</y>
      <width>221</width>
      <height>101</height>
     </rect>
@@ -93,8 +93,15 @@ QLineEdit:focus {
      <bold>true</bold>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">*{
+font-size: 26px; /* Increased font size */}</string>
+   </property>
    <property name="text">
-    <string>About Us</string>
+    <string># About Us</string>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::TextFormat::MarkdownText</enum>
    </property>
   </widget>
   <widget class="QPushButton" name="back">
@@ -102,12 +109,51 @@ QLineEdit:focus {
     <rect>
      <x>20</x>
      <y>30</y>
-     <width>65</width>
-     <height>22</height>
+     <width>141</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
     <string>BACK</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Info">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>120</y>
+     <width>781</width>
+     <height>351</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">*{
+font-size: 20px; /* Increased font size */}</string>
+   </property>
+   <property name="text">
+    <string># Project Team Structure
+
+## Team Members
+
+1. **Muhammad Muneeb** - **Group Leader**
+   - Responsible for overall project management and coordination.
+   - Oversaw the progress and ensured deadlines are met.
+
+2. **Muaaz Waseem** - **UI Designer**
+   - Designed the user interface for the application.
+   - Focused on creating an intuitive and visually appealing user experience.
+
+3. **Hafiz Muhammad Salman** - **Backend Developer**
+   - Developed and managed the backend logic ..
+
+Together, we collaborated to deliver this successful and well-rounded project!
+</string>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::TextFormat::MarkdownText</enum>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>

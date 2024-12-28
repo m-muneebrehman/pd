@@ -62,7 +62,7 @@ void Result::processTargetFile(const std::string &targetFile)
     DIR *dirB;
     struct dirent *dir_object;
     vector<float> scores(mGlobals.number_of_tests, 0.0);
-    vector<string> matches(mGlobals.number_of_tests, "");
+    vector<string> matches;
 
     string target = sP.getFileData(targetFile);
 
@@ -78,26 +78,28 @@ void Result::processTargetFile(const std::string &targetFile)
                 auto databaseTokens = tok.stringToToken(base);
                 auto targetTokens = tok.stringToToken(target);
 
+                // Run plagiarism tests and collect scores
                 float temp;
+
                 temp = tst.tokenizeTest(databaseTokens, targetTokens, mGlobals.stopwords_file);
                 if (scores[0] < temp)
                 {
                     scores[0] = temp;
-                    matches[0] = dir_object->d_name;
+                    matches.push_back(dir_object->d_name);
                 }
 
                 temp = tst.ngramTest(databaseTokens, targetTokens);
                 if (scores[1] < temp)
                 {
                     scores[1] = temp;
-                    matches[1] = dir_object->d_name;
+                    matches.push_back(dir_object->d_name);
                 }
 
                 temp = tst.cosineTest(databaseTokens, targetTokens, mGlobals.stopwords_file);
                 if (scores[2] < temp)
                 {
                     scores[2] = temp;
-                    matches[2] = dir_object->d_name;
+                    matches.push_back(dir_object->d_name);
                 }
             }
         }
@@ -109,12 +111,70 @@ void Result::processTargetFile(const std::string &targetFile)
 
 void Result::displayResults(const std::vector<float> &scores, const std::vector<std::string> &matches)
 {
-    for (size_t i = 0; i < scores.size(); ++i)
-    {
-        cout << "Test " << (i + 1) << " score: " << fixed << setprecision(mGlobals.score_accuracy) << scores[i] << "/10" << endl;
+    calculations c;
+    vector<int> weights(scores.size(), 0);
+
+    // Define weights for tests
+    weights[0] = 3; // Weight for first test
+    weights[1] = 4; // Weight for second test
+    weights[2] = 3; // Weight for third test
+
+    // Calculate the final score
+    float finalScore = (scores[0] * weights[0] + scores[1] * weights[1] + scores[2] * weights[2]) / c.sum(weights);
+
+    // Determine verdict
+    string verdict;
+    if (finalScore < 1)
+        verdict = "Not plagiarised";
+    else if (finalScore < 5)
+        verdict = "Slightly plagiarised";
+    else if (finalScore < 8)
+        verdict = "Fairly plagiarised";
+    else
+        verdict = "Highly plagiarised";
+
+    // Deduplicate matching results
+    vector<string> uniqueMatches = matches;
+    uniqueMatches.erase(remove(uniqueMatches.begin(), uniqueMatches.end(), ""), uniqueMatches.end());
+    sort(uniqueMatches.begin(), uniqueMatches.end());
+    uniqueMatches.erase(unique(uniqueMatches.begin(), uniqueMatches.end()), uniqueMatches.end());
+
+    // Terminal Output
+    cout << "********************************************" << endl;
+    cout << "\tFinal score: " << finalScore << endl;
+    cout << "\tVerdict: " << verdict << endl;
+    if (verdict != "Not plagiarised") {
+        cout << "\tMatch found in:" << endl;
+        if (uniqueMatches.empty())
+            cout << "\t-nil-" << endl;
+        else {
+            for (const auto &file : uniqueMatches)
+                cout << "\t\t" << file << endl;
+        }
+    }
+    cout << "********************************************" << endl;
+
+    // GUI Output
+    QString resultText = QString("********************************************\n"
+                                 "\tFinal score: %1\n"
+                                 "\tVerdict: %2\n")
+                             .arg(QString::number(finalScore, 'f', 2))
+                             .arg(QString::fromStdString(verdict));
+
+    if (verdict != "Not plagiarised") {
+        resultText += "\tMatch found in:\n";
+        if (uniqueMatches.empty())
+            resultText += "\t-nil-\n";
+        else {
+            for (const auto &file : uniqueMatches)
+                resultText += QString("\t\t%1\n").arg(QString::fromStdString(file));
+        }
     }
 
-    v.getVerdict(scores, matches);
+    resultText += "********************************************";
+
+    // Update QLabel on GUI
+    ui->result->setText(resultText);
 }
 
 void Result::on_back_clicked()
@@ -123,4 +183,3 @@ void Result::on_back_clicked()
     Sleep(500);
     this->hide();
 }
-

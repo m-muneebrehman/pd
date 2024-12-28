@@ -21,8 +21,8 @@ public:
     ~Palagiarism();
 
 protected:
-    void dragEnterEvent(QDragEnterEvent *event) override;
-    void dropEvent(QDropEvent *event) override;
+    void dragEnterEvent(QDragEnterEvent *event) override; // Handle drag enter event
+    void dropEvent(QDropEvent *event) override; // Handle drop event
 
 private slots:
     void on_test_clicked();

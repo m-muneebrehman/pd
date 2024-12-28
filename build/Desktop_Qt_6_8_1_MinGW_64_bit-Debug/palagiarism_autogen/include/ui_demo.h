@@ -96,7 +96,7 @@ public:
 ""));
         palagiarismP = new QPushButton(Demo);
         palagiarismP->setObjectName("palagiarismP");
-        palagiarismP->setGeometry(QRect(170, 170, 211, 191));
+        palagiarismP->setGeometry(QRect(110, 170, 211, 191));
         DatabaseUpdate = new QPushButton(Demo);
         DatabaseUpdate->setObjectName("DatabaseUpdate");
         DatabaseUpdate->setGeometry(QRect(480, 170, 211, 191));
@@ -109,7 +109,7 @@ public:
         Title->setFont(font);
         back = new QPushButton(Demo);
         back->setObjectName("back");
-        back->setGeometry(QRect(20, 20, 65, 22));
+        back->setGeometry(QRect(20, 20, 111, 41));
 
         retranslateUi(Demo);
 

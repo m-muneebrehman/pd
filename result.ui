@@ -108,8 +108,8 @@ QLineEdit:focus {
     <rect>
      <x>260</x>
      <y>140</y>
-     <width>221</width>
-     <height>181</height>
+     <width>361</width>
+     <height>261</height>
     </rect>
    </property>
    <property name="text">

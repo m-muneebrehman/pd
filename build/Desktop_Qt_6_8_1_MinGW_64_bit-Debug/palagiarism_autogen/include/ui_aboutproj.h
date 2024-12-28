@@ -22,6 +22,7 @@ class Ui_AboutProj
 public:
     QLabel *aboutProj;
     QPushButton *back;
+    QLabel *info;
 
     void setupUi(QDialog *AboutProj)
     {
@@ -40,68 +41,73 @@ public:
 "/* Style for labels with neon effect */\n"
 "QLabel {\n"
 "    color: #00ffcc; /* Neon aqua */\n"
-"    font-size: 20px; /* Slightly smaller font size */\n"
+"    font-size: 18px; /* Reduced font size */\n"
 "    font-weight: bold;\n"
 "    text-align: center;\n"
-"    text-shadow: 0px 0px 8px rgba(0, 255, 204, 0.8), /* Outer neon glow */\n"
-"                 0px 0px 4px rgba(0, 255, 204, 0.6); /* Inner glow */\n"
 "    font-family: 'Cyber Alert', sans-serif; /* Cyber Alert font */\n"
 "}\n"
 "\n"
 "/* Style for buttons */\n"
 "QPushButton {\n"
 "    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
-"                                "
-                        "stop:0 #1f4037, stop:1 #99f2c8); /* Gradient background */\n"
+"                                stop:0 #1f4037, stop:1 #99f2c8); /* Gradient background */\n"
 "    color: #1c2833; /* Dark text */\n"
 "    border: none; /* No border */\n"
-"    border-radius: 20px; /* Rounded edges */\n"
-"    padding: 10px 20px; /* Adjusted padding for smaller size */\n"
+"    border-radius: 20"
+                        "px; /* Rounded edges */\n"
+"    padding: 10px 20px; /* Adjusted padding for smaller button */\n"
 "    font-size: 16px; /* Reduced font size */\n"
 "    font-weight: bold;\n"
 "    font-family: 'Cyber Alert', sans-serif; /* Cyber Alert font */\n"
-"    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.3); /* Glow effect */\n"
-"    transition: all 0.3s ease-in-out;\n"
 "}\n"
 "\n"
 "/* Hover effect for buttons */\n"
 "QPushButton:hover {\n"
 "    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
 "                                stop:0 #34e89e, stop:1 #0f3443); /* Vibrant gradient */\n"
-"    transform: scale(1.1); /* Slightly enlarge */\n"
-"    box-shadow: 0px 10px 15px rgba(0, 255, 170, 0.7); /* Neon glow */\n"
 "    color: #ecf0f1; /* Switch text to light for contrast */\n"
 "}\n"
 "\n"
 "/* Style for line edits */\n"
 "QLineEdit {\n"
-"    background-color: "
-                        "#1c2833; /* Dark background */\n"
+"    background-color: #1c2833; /* Dark background */\n"
 "    color: #ecf0f1; /* Light text */\n"
 "    border: 2px solid #00d1b2; /* Neon border */\n"
 "    border-radius: 12px; /* Adjusted for smaller size */\n"
 "    padding: 6px 10px; /* Adjusted padding for smaller input */\n"
-"    font-size: 14px; /* Reduced font size */\n"
+"    font-size: 16px; /* Reduced font size */\n"
 "    font-family: 'Cyber Alert', sans-serif; /* Cyber Alert font */\n"
-"    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */\n"
 "}\n"
 "\n"
-"/* Focus effect for line edits */\n"
+"/* Focus eff"
+                        "ect for line edits */\n"
 "QLineEdit:focus {\n"
 "    border-color: #34e89e; /* Change border color when focused */\n"
-"    box-shadow: 0px 0px 10px rgba(52, 232, 158, 0.8); /* Neon glow on focus */\n"
 "}\n"
 ""));
         aboutProj = new QLabel(AboutProj);
         aboutProj->setObjectName("aboutProj");
-        aboutProj->setGeometry(QRect(280, 30, 401, 51));
+        aboutProj->setGeometry(QRect(290, 40, 401, 71));
         QFont font;
         font.setFamilies({QString::fromUtf8("Cyber Alert")});
         font.setBold(true);
         aboutProj->setFont(font);
+        aboutProj->setStyleSheet(QString::fromUtf8("*{\n"
+"font-size: 26px; /* Reduced font size */\n"
+"    font-weight: bold;\n"
+"    text-align: center;\n"
+"}"));
+        aboutProj->setTextFormat(Qt::TextFormat::MarkdownText);
         back = new QPushButton(AboutProj);
         back->setObjectName("back");
-        back->setGeometry(QRect(20, 20, 141, 71));
+        back->setGeometry(QRect(20, 20, 141, 41));
+        info = new QLabel(AboutProj);
+        info->setObjectName("info");
+        info->setGeometry(QRect(50, 130, 691, 471));
+        info->setStyleSheet(QString::fromUtf8("*{\n"
+"}"));
+        info->setTextFormat(Qt::TextFormat::MarkdownText);
+        info->setWordWrap(true);
 
         retranslateUi(AboutProj);
 
@@ -111,8 +117,25 @@ public:
     void retranslateUi(QDialog *AboutProj)
     {
         AboutProj->setWindowTitle(QCoreApplication::translate("AboutProj", "Dialog", nullptr));
-        aboutProj->setText(QCoreApplication::translate("AboutProj", "About Project", nullptr));
+        aboutProj->setText(QCoreApplication::translate("AboutProj", "## About Project", nullptr));
         back->setText(QCoreApplication::translate("AboutProj", "BACK", nullptr));
+        info->setText(QCoreApplication::translate("AboutProj", "# Plagiarism Detector System\n"
+"\n"
+"The **Plagiarism Detector System** is built using the **Qt framework** and **C++ standard libraries**. \n"
+"\n"
+"## Project Goal\n"
+"\n"
+"The primary objective of this project is to demonstrate our understanding of **data structures** and **algorithms**.\n"
+"\n"
+"## Key Features\n"
+"\n"
+"- Compares similarities between different text documents.\n"
+"- Reads files in `.txt` format.\n"
+"- Tokenizes words for analysis.\n"
+"- Uses various algorithms for similarity comparison.\n"
+"\n"
+"This project highlights our ability to apply computational techniques to practical problems.\n"
+"", nullptr));
     } // retranslateUi
 
 };

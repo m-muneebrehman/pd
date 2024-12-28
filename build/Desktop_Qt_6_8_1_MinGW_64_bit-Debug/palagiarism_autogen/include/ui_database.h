@@ -86,10 +86,20 @@ public:
 "    font-family: 'Cyber Alert', sans-serif; /* Cyber Alert font */\n"
 "}\n"
 "\n"
+"/* Style for QListWidget */\n"
+"QListWidget {\n"
+"    background-color: #"
+                        "1c2833; /* Dark background */\n"
+"    color: #ecf0f1; /* Light text */\n"
+"    border: 2px solid #00d1b2; /* Neon border */\n"
+"    border-radius: 12px; /* Rounded edges */\n"
+"    font-family: 'Cyber Alert', sans-serif; /* Cyber Alert font */\n"
+"    font-size: 14px; /* Font size */\n"
+"    padding: 10px; /* Padding */\n"
+"}\n"
 "/* Focus effect for line edits */\n"
 "QLineEdit:focus {\n"
-"    border-co"
-                        "lor: #34e89e; /* Change border color when focused */\n"
+"    border-color: #34e89e; /* Change border color when focused */\n"
 "}\n"
 ""));
         back = new QPushButton(Database);
@@ -97,14 +107,14 @@ public:
         back->setGeometry(QRect(20, 20, 111, 51));
         Addbutton = new QPushButton(Database);
         Addbutton->setObjectName("Addbutton");
-        Addbutton->setGeometry(QRect(140, 270, 141, 51));
+        Addbutton->setGeometry(QRect(140, 300, 141, 51));
         removeButton = new QPushButton(Database);
         removeButton->setObjectName("removeButton");
         removeButton->setGeometry(QRect(570, 340, 151, 51));
         removeButton->setAcceptDrops(true);
         AddFile = new QLineEdit(Database);
         AddFile->setObjectName("AddFile");
-        AddFile->setGeometry(QRect(140, 240, 141, 21));
+        AddFile->setGeometry(QRect(100, 240, 221, 31));
         label = new QLabel(Database);
         label->setObjectName("label");
         label->setGeometry(QRect(150, 200, 121, 31));

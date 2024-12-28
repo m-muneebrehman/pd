@@ -14,171 +14,196 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">/* Dialog with a gradient background for a futuristic feel */
+   <string notr="true">/* Main window with a gradient background */
 QMainWindow {
-    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
-                                stop:0 #2c3e50, stop:1 #4ca1af); /* Gradient */
-    font-family: 'Cyber Alert', sans-serif; /* Cyber Alert font family */
-    color: #ecf0f1; /* Light text for contrast */
-    border-radius: 12px; /* Rounded edges */4
+    background: qlineargradient(to bottom right, #1E2A38, #3A506B); /* Subtle gradient */
+    font-family: 'Arial', sans-serif; /* Clean, modern font */
+    color: #F4F4F9; /* Light text for contrast */
+    border: none; /* Ensure no unwanted borders appear */
 }
 
-/* Style for labels with neon effect */
+/* Style for labels */
 QLabel {
-    color: #00ffcc; /* Neon aqua */
-    font-size: 20px; /* Slightly smaller font size */
-    font-weight: bold;
+    color: #F4F4F9; /* Light text */
+    font-size: 28px; /* Adjusted for better visibility */
+    font-weight: bold; /* Slight emphasis */
     text-align: center;
-    text-shadow: 0px 0px 8px rgba(0, 255, 204, 0.8), /* Outer neon glow */
-                 0px 0px 4px rgba(0, 255, 204, 0.6); /* Inner glow */
-    font-family: 'Cyber Alert', sans-serif; /* Cyber Alert font */
+}
+
+/* Title-specific styling */
+QLabel#title {
+    font-size: 36px; /* Emphasized title */
+    color: #00D4FF; /* Eye-catching neon blue */
+    margin-top: 20px; /* Added spacing if needed */
 }
 
 /* Style for buttons */
 QPushButton {
-    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
-                                stop:0 #1f4037, stop:1 #99f2c8); /* Gradient background */
-    color: #1c2833; /* Dark text */
-    border: none; /* No border */
-    border-radius: 20px; /* Rounded edges */
-    padding: 10px 20px; /* Adjusted padding for smaller size */
-    font-size: 16px; /* Reduced font size */
-    font-weight: bold;
-    font-family: 'Cyber Alert', sans-serif; /* Cyber Alert font */
-    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.3); /* Glow effect */
-    transition: all 0.3s ease-in-out;
+    background: qlineargradient(to bottom, #007BFF, #0056B3); /* Modern blue gradient */
+    color: #FFFFFF; /* White text for readability */
+    border: none; /* No border for minimalism */
+    border-radius: 10px; /* Soft corners */
+    padding: 10px 20px; /* Comfortable padding */
+    font-size: 18px; /* Appropriately sized font */
+    font-weight: bold; /* Emphasize button text */
+    margin-top: 20px; /* Space from other elements */
 }
 
 /* Hover effect for buttons */
 QPushButton:hover {
-    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
-                                stop:0 #34e89e, stop:1 #0f3443); /* Vibrant gradient */
-    transform: scale(1.1); /* Slightly enlarge */
-    box-shadow: 0px 10px 15px rgba(0, 255, 170, 0.7); /* Neon glow */
-    color: #ecf0f1; /* Switch text to light for contrast */
+    background: qlineargradient(to bottom, #0056B3, #003B73); /* Darker blue on hover */
+    color: #F4F4F9; /* Light text */
+    cursor: pointer; /* Change cursor to pointer for hover effect */
+}
+
+/* Disable QPushButton default focus outline */
+QPushButton:focus {
+    outline: none;
 }
 
 /* Style for line edits */
 QLineEdit {
-    background-color: #1c2833; /* Dark background */
-    color: #ecf0f1; /* Light text */
-    border: 2px solid #00d1b2; /* Neon border */
-    border-radius: 12px; /* Adjusted for smaller size */
-    padding: 6px 10px; /* Adjusted padding for smaller input */
-    font-size: 14px; /* Reduced font size */
-    font-family: 'Cyber Alert', sans-serif; /* Cyber Alert font */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    background-color: #2C3E50; /* Dark input box */
+    color: #F4F4F9; /* Light text */
+    border: 2px solid #00D4FF; /* Neon blue border */
+    border-radius: 8px; /* Soft corners */
+    padding: 8px; /* Comfortable padding */
+    font-size: 16px; /* Legible text */
 }
 
 /* Focus effect for line edits */
 QLineEdit:focus {
-    border-color: #34e89e; /* Change border color when focused */
-    box-shadow: 0px 0px 10px rgba(52, 232, 158, 0.8); /* Neon glow on focus */
+    border-color: #007BFF; /* Brighter blue on focus */
+    outline: none; /* Remove default focus outline */
+}
+
+/* General adjustments */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">/* Main window with a gradient background */
+QMainWindow {
+    background: qlineargradient(to bottom right, #1E2A38, #3A506B); /* Subtle gradient */
+    font-family: 'Arial', sans-serif; /* Clean, modern font */
+    color: #F4F4F9; /* Light text for contrast */
+}
+
+/* Style for labels (minimalistic design) */
+QLabel {
+    color: #F4F4F9; /* Light text */
+    font-size: 24px; /* Clean size */
+    font-weight: bold; /* Slight emphasis */
+    text-align: center;
+}
+
+/* Title-specific styling */
+QLabel#title {
+    font-size: 32px; /* Emphasized title */
+    color: #00D4FF; /* Eye-catching neon blue */
+}
+
+/* Style for buttons */
+QPushButton {
+    background: qlineargradient(to bottom, #007BFF, #0056B3); /* Modern blue gradient */
+    color: #FFFFFF; /* White text for readability */
+    border: none; /* No border for minimalism */
+    border-radius: 10px; /* Soft corners */
+    padding: 10px 20px; /* Comfortable padding */
+    font-size: 18px; /* Appropriately sized font */
+    font-weight: bold; /* Emphasize button text */
+}
+
+/* Hover effect for buttons */
+QPushButton:hover {
+    background: qlineargradient(to bottom, #0056B3, #003B73); /* Darker blue on hover */
+    color: #F4F4F9; /* Light text */
+}
+
+/* Style for line edits */
+QLineEdit {
+    background-color: #2C3E50; /* Dark input box */
+    color: #F4F4F9; /* Light text */
+    border: 2px solid #00D4FF; /* Neon blue border */
+    border-radius: 8px; /* Soft corners */
+    padding: 8px; /* Comfortable padding */
+    font-size: 16px; /* Legible text */
+}
+
+/* Focus effect for line edits */
+QLineEdit:focus {
+    border-color: #007BFF; /* Brighter blue on focus */
+    outline: none; /* Remove default focus outline */
+}
+
+/* Style for QListWidget */
+QListWidget {
+    background-color: #2C3E50; /* Dark background */
+    color: #F4F4F9; /* Light text */
+    border: none; /* Minimalist design */
+    border-radius: 8px; /* Rounded edges */
+    padding: 8px; /* Comfortable spacing */
+    font-size: 16px; /* Clean font size */
+}
+
+/* Style for selected items in QListWidget */
+QListWidget::item:selected {
+    background-color: #00D4FF; /* Highlight color */
+    color: #FFFFFF; /* Text color for contrast */
+}
+
+/* Hover effect for QListWidget items */
+QListWidget::item:hover {
+    background-color: #007BFF; /* Subtle blue hover effect */
+    color: #FFFFFF; /* Light text */
+}
+</string>
+   </property>
    <widget class="QLabel" name="title">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>140</y>
-      <width>401</width>
-      <height>51</height>
+      <x>90</x>
+      <y>120</y>
+      <width>681</width>
+      <height>141</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Cyber Alert</family>
+      <pointsize>-1</pointsize>
       <bold>true</bold>
      </font>
     </property>
-    <property name="text">
-     <string>Palagiarism Detector</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="madeby">
-    <property name="geometry">
-     <rect>
-      <x>370</x>
-      <y>220</y>
-      <width>111</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Cyber Alert</family>
-      <bold>true</bold>
-     </font>
+    <property name="styleSheet">
+     <string notr="true">*{
+font-size: 36px; /* Increased font size */
+}</string>
     </property>
     <property name="text">
-     <string>Made by: </string>
+     <string># Plagiarism Detector</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::TextFormat::MarkdownText</enum>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>400</x>
-      <y>420</y>
-      <width>65</width>
-      <height>22</height>
+      <x>320</x>
+      <y>310</y>
+      <width>201</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string>Continue</string>
     </property>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>280</y>
-      <width>391</width>
-      <height>121</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QLabel" name="label">
-       <property name="font">
-        <font>
-         <family>Cyber Alert</family>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Muhammad Muneeb ur Rehman</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_3">
-       <property name="font">
-        <font>
-         <family>Cyber Alert</family>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Hafiz Muhammad Salman</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_2">
-       <property name="font">
-        <font>
-         <family>Cyber Alert</family>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Muaaz Waseem</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
    </widget>
   </widget>
  </widget>

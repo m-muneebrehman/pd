@@ -22,6 +22,7 @@ class Ui_aboutUs
 public:
     QLabel *label;
     QPushButton *back;
+    QLabel *Info;
 
     void setupUi(QDialog *aboutUs)
     {
@@ -40,7 +41,7 @@ public:
 "/* Style for labels with neon effect */\n"
 "QLabel {\n"
 "    color: #00ffcc; /* Neon aqua */\n"
-"    font-size: 20px; /* Slightly smaller font size */\n"
+"    font-size: 24px; /* Increased font size */\n"
 "    font-weight: bold;\n"
 "    text-align: center;\n"
 "    text-shadow: 0px 0px 8px rgba(0, 255, 204, 0.8), /* Outer neon glow */\n"
@@ -51,13 +52,13 @@ public:
 "/* Style for buttons */\n"
 "QPushButton {\n"
 "    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
-"                                "
-                        "stop:0 #1f4037, stop:1 #99f2c8); /* Gradient background */\n"
+"                                stop:0 "
+                        "#1f4037, stop:1 #99f2c8); /* Gradient background */\n"
 "    color: #1c2833; /* Dark text */\n"
 "    border: none; /* No border */\n"
 "    border-radius: 20px; /* Rounded edges */\n"
-"    padding: 10px 20px; /* Adjusted padding for smaller size */\n"
-"    font-size: 16px; /* Reduced font size */\n"
+"    padding: 12px 24px; /* Adjusted padding for larger button */\n"
+"    font-size: 20px; /* Increased font size */\n"
 "    font-weight: bold;\n"
 "    font-family: 'Cyber Alert', sans-serif; /* Cyber Alert font */\n"
 "    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.3); /* Glow effect */\n"
@@ -75,13 +76,13 @@ public:
 "\n"
 "/* Style for line edits */\n"
 "QLineEdit {\n"
-"    background-color: "
-                        "#1c2833; /* Dark background */\n"
+"    background-color: #1c2"
+                        "833; /* Dark background */\n"
 "    color: #ecf0f1; /* Light text */\n"
 "    border: 2px solid #00d1b2; /* Neon border */\n"
 "    border-radius: 12px; /* Adjusted for smaller size */\n"
-"    padding: 6px 10px; /* Adjusted padding for smaller input */\n"
-"    font-size: 14px; /* Reduced font size */\n"
+"    padding: 8px 12px; /* Adjusted padding for larger input */\n"
+"    font-size: 30px; /* Increased font size */\n"
 "    font-family: 'Cyber Alert', sans-serif; /* Cyber Alert font */\n"
 "    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */\n"
 "}\n"
@@ -94,14 +95,24 @@ public:
 ""));
         label = new QLabel(aboutUs);
         label->setObjectName("label");
-        label->setGeometry(QRect(300, 10, 221, 101));
+        label->setGeometry(QRect(320, 20, 221, 101));
         QFont font;
         font.setFamilies({QString::fromUtf8("Cyber Alert")});
         font.setBold(true);
         label->setFont(font);
+        label->setStyleSheet(QString::fromUtf8("*{\n"
+"font-size: 26px; /* Increased font size */}"));
+        label->setTextFormat(Qt::TextFormat::MarkdownText);
         back = new QPushButton(aboutUs);
         back->setObjectName("back");
-        back->setGeometry(QRect(20, 30, 65, 22));
+        back->setGeometry(QRect(20, 30, 141, 41));
+        Info = new QLabel(aboutUs);
+        Info->setObjectName("Info");
+        Info->setGeometry(QRect(40, 120, 781, 351));
+        Info->setStyleSheet(QString::fromUtf8("*{\n"
+"font-size: 20px; /* Increased font size */}"));
+        Info->setTextFormat(Qt::TextFormat::MarkdownText);
+        Info->setWordWrap(true);
 
         retranslateUi(aboutUs);
 
@@ -111,8 +122,25 @@ public:
     void retranslateUi(QDialog *aboutUs)
     {
         aboutUs->setWindowTitle(QCoreApplication::translate("aboutUs", "Dialog", nullptr));
-        label->setText(QCoreApplication::translate("aboutUs", "About Us", nullptr));
+        label->setText(QCoreApplication::translate("aboutUs", "# About Us", nullptr));
         back->setText(QCoreApplication::translate("aboutUs", "BACK", nullptr));
+        Info->setText(QCoreApplication::translate("aboutUs", "# Project Team Structure\n"
+"\n"
+"## Team Members\n"
+"\n"
+"1. **Muhammad Muneeb** - **Group Leader**\n"
+"   - Responsible for overall project management and coordination.\n"
+"   - Oversaw the progress and ensured deadlines are met.\n"
+"\n"
+"2. **Muaaz Waseem** - **UI Designer**\n"
+"   - Designed the user interface for the application.\n"
+"   - Focused on creating an intuitive and visually appealing user experience.\n"
+"\n"
+"3. **Hafiz Muhammad Salman** - **Backend Developer**\n"
+"   - Developed and managed the backend logic ..\n"
+"\n"
+"Together, we collaborated to deliver this successful and well-rounded project!\n"
+"", nullptr));
     } // retranslateUi
 
 };
