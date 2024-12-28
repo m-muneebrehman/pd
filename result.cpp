@@ -46,7 +46,21 @@ void Result::runPlagiarismCheck()
             if (sP.extCheck((string)dir_object->d_name, ".txt"))
             {
                 string targetFile = string(mGlobals.target_folder) + "/" + dir_object->d_name;
-                processTargetFile(targetFile);
+
+                try {
+                    // Check if the file is empty or too small
+                    string fileContent = sP.getFileData(targetFile);
+                    if (fileContent.empty() || fileContent.size() < 6)
+                    {
+                        cout << "Skipping empty or insufficient data file: " << dir_object->d_name << endl;
+                        continue;
+                    }
+
+                    processTargetFile(targetFile);
+                } catch (const exception &e) {
+                    cerr << "Error processing file " << dir_object->d_name << ": " << e.what() << endl;
+                    continue;
+                }
             }
         }
         closedir(dir);
@@ -64,7 +78,13 @@ void Result::processTargetFile(const std::string &targetFile)
     vector<float> scores(mGlobals.number_of_tests, 0.0);
     vector<string> matches;
 
-    string target = sP.getFileData(targetFile);
+    string target;
+    try {
+        target = sP.getFileData(targetFile);
+    } catch (const exception &e) {
+        cerr << "Failed to read target file: " << targetFile << ". Error: " << e.what() << endl;
+        return;
+    }
 
     if ((dirB = opendir(mGlobals.database)) != NULL)
     {
@@ -73,33 +93,44 @@ void Result::processTargetFile(const std::string &targetFile)
             if (sP.extCheck((string)dir_object->d_name, ".txt"))
             {
                 string baseFile = string(mGlobals.database) + "/" + dir_object->d_name;
-                string base = sP.getFileData(baseFile);
+                string base;
+                try {
+                    base = sP.getFileData(baseFile);
+                } catch (const exception &e) {
+                    cerr << "Failed to read base file: " << baseFile << ". Error: " << e.what() << endl;
+                    continue;
+                }
 
                 auto databaseTokens = tok.stringToToken(base);
                 auto targetTokens = tok.stringToToken(target);
 
-                // Run plagiarism tests and collect scores
-                float temp;
+                try {
+                    // Run plagiarism tests and collect scores
+                    float temp;
 
-                temp = tst.tokenizeTest(databaseTokens, targetTokens, mGlobals.stopwords_file);
-                if (scores[0] < temp)
-                {
-                    scores[0] = temp;
-                    matches.push_back(dir_object->d_name);
-                }
+                    temp = tst.tokenizeTest(databaseTokens, targetTokens, mGlobals.stopwords_file);
+                    if (scores[0] < temp)
+                    {
+                        scores[0] = temp;
+                        matches.push_back(dir_object->d_name);
+                    }
 
-                temp = tst.ngramTest(databaseTokens, targetTokens);
-                if (scores[1] < temp)
-                {
-                    scores[1] = temp;
-                    matches.push_back(dir_object->d_name);
-                }
+                    temp = tst.ngramTest(databaseTokens, targetTokens);
+                    if (scores[1] < temp)
+                    {
+                        scores[1] = temp;
+                        matches.push_back(dir_object->d_name);
+                    }
 
-                temp = tst.cosineTest(databaseTokens, targetTokens, mGlobals.stopwords_file);
-                if (scores[2] < temp)
-                {
-                    scores[2] = temp;
-                    matches.push_back(dir_object->d_name);
+                    temp = tst.cosineTest(databaseTokens, targetTokens, mGlobals.stopwords_file);
+                    if (scores[2] < temp)
+                    {
+                        scores[2] = temp;
+                        matches.push_back(dir_object->d_name);
+                    }
+                } catch (const exception &e) {
+                    cerr << "Error during plagiarism test for file: " << baseFile << ". Error: " << e.what() << endl;
+                    continue;
                 }
             }
         }
@@ -180,6 +211,6 @@ void Result::displayResults(const std::vector<float> &scores, const std::vector<
 void Result::on_back_clicked()
 {
     _palagarism->show();
-    Sleep(500);
+    Sleep(70);
     this->hide();
 }
