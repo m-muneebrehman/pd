@@ -115,6 +115,7 @@ public:
         AddFile = new QLineEdit(Database);
         AddFile->setObjectName("AddFile");
         AddFile->setGeometry(QRect(100, 240, 221, 31));
+        AddFile->setReadOnly(true);
         label = new QLabel(Database);
         label->setObjectName("label");
         label->setGeometry(QRect(150, 200, 121, 31));

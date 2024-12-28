@@ -48,8 +48,19 @@ void Database::loadFilesIntoList()
 void Database::dragEnterEvent(QDragEnterEvent *event)
 {
     if (event->mimeData()->hasUrls()) {
-        event->acceptProposedAction();  // Accept the drag event
+        QList<QUrl> urlList = event->mimeData()->urls();
+        if (!urlList.isEmpty()) {
+            QString filePath = urlList.first().toLocalFile();
+            QFileInfo fileInfo(filePath);
+
+            // Check if the file has a .txt extension
+            if (fileInfo.suffix().toLower() == "txt") {
+                event->acceptProposedAction();  // Accept the drag event
+                return;
+            }
+        }
     }
+    event->ignore();  // Ignore non-txt files
 }
 
 // Handle drop event
@@ -59,8 +70,16 @@ void Database::dropEvent(QDropEvent *event)
     if (mimeData->hasUrls()) {
         QList<QUrl> urlList = mimeData->urls();
         if (!urlList.isEmpty()) {
-            tempFilePath = urlList.first().toLocalFile();
-            ui->AddFile->setText(tempFilePath);  // Show the file path in the QLineEdit
+            QString filePath = urlList.first().toLocalFile();
+            QFileInfo fileInfo(filePath);
+
+            // Check if the file has a .txt extension
+            if (fileInfo.suffix().toLower() == "txt") {
+                tempFilePath = filePath;
+                ui->AddFile->setText(tempFilePath);  // Show the file path in the QLineEdit
+            } else {
+                QMessageBox::warning(this, "Error", "Only .txt files are accepted.");
+            }
         }
     }
 }
@@ -69,7 +88,7 @@ void Database::dropEvent(QDropEvent *event)
 void Database::on_Addbutton_clicked()
 {
     if (tempFilePath.isEmpty()) {
-        QMessageBox::warning(this, "Error", "No file selected. Drag and drop a file first.");
+        QMessageBox::warning(this, "Error", "No file selected. Drag and drop a .txt file first.");
         return;
     }
 
@@ -117,6 +136,6 @@ void Database::on_pushButton_clicked()
 void Database::on_back_clicked()
 {
     _demo->show();     // Show the Demo window again
-    Sleep(500);
+    Sleep(100);
     this->hide();      // Hide the current window (Database)
 }

@@ -111,9 +111,9 @@ QLineEdit:focus {
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>80</y>
-     <width>401</width>
+     <x>120</x>
+     <y>90</y>
+     <width>541</width>
      <height>51</height>
     </rect>
    </property>
@@ -125,7 +125,10 @@ QLineEdit:focus {
     </font>
    </property>
    <property name="text">
-    <string>Drag and Drop your file here</string>
+    <string># Drag and Drop your File here</string>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::TextFormat::MarkdownText</enum>
    </property>
   </widget>
   <widget class="QPushButton" name="test">

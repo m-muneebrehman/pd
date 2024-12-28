@@ -107,11 +107,12 @@ public:
         lineEdit->setReadOnly(true);
         label = new QLabel(Palagiarism);
         label->setObjectName("label");
-        label->setGeometry(QRect(240, 80, 401, 51));
+        label->setGeometry(QRect(120, 90, 541, 51));
         QFont font;
         font.setFamilies({QString::fromUtf8("Cyber Alert")});
         font.setBold(true);
         label->setFont(font);
+        label->setTextFormat(Qt::TextFormat::MarkdownText);
         test = new QPushButton(Palagiarism);
         test->setObjectName("test");
         test->setGeometry(QRect(340, 370, 121, 41));
@@ -125,7 +126,7 @@ public:
     {
         Palagiarism->setWindowTitle(QCoreApplication::translate("Palagiarism", "Dialog", nullptr));
         back->setText(QCoreApplication::translate("Palagiarism", "BACK", nullptr));
-        label->setText(QCoreApplication::translate("Palagiarism", "Drag and Drop your file here", nullptr));
+        label->setText(QCoreApplication::translate("Palagiarism", "# Drag and Drop your File here", nullptr));
         test->setText(QCoreApplication::translate("Palagiarism", "Test", nullptr));
     } // retranslateUi
 
