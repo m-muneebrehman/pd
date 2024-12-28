@@ -231,6 +231,9 @@ void Result::displayResults(const std::vector<float> &scores, const std::vector<
 void Result::on_back_clicked()
 {
     _palagarism->show();
+<<<<<<< HEAD
+=======
     Sleep(70);
+>>>>>>> 66de71947495d694335c6e52e7fc28bd796be2bc
     this->hide();
 }

@@ -136,6 +136,6 @@ void Database::on_pushButton_clicked()
 void Database::on_back_clicked()
 {
     _demo->show();     // Show the Demo window again
-    Sleep(100);
+    Sleep(70);
     this->hide();      // Hide the current window (Database)
 }
