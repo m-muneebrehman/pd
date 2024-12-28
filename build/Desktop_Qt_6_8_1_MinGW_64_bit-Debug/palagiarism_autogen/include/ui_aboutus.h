@@ -137,7 +137,7 @@ public:
 "   - Focused on creating an intuitive and visually appealing user experience.\n"
 "\n"
 "3. **Hafiz Muhammad Salman** - **Backend Developer**\n"
-"   - Developed and managed the backend logic ..\n"
+"   - Developed and managed the backend logic .\n"
 "\n"
 "Together, we collaborated to deliver this successful and well-rounded project!\n"
 "", nullptr));
