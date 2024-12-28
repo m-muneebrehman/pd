@@ -9,10 +9,9 @@
 #include "stringOperations.h"
 #include "tokenization.h"
 #include "palagiarism.h"
-
-#include <QFile>             // Include QFile
-#include <QFileInfo>         // Include QFileInfo
-#include <QMessageBox>       // Include QMessageBox
+#include <QFile>
+#include <QFileInfo>
+#include <QMessageBox>
 
 using namespace std;
 
@@ -231,9 +230,6 @@ void Result::displayResults(const std::vector<float> &scores, const std::vector<
 void Result::on_back_clicked()
 {
     _palagarism->show();
-<<<<<<< HEAD
-=======
     Sleep(70);
->>>>>>> 66de71947495d694335c6e52e7fc28bd796be2bc
     this->hide();
 }
