@@ -1,6 +1,7 @@
 #include "aboutus.h"
 #include "ui_aboutus.h"
 #include "secpage.h"
+#include <windows.h>
 
 aboutUs::aboutUs(SecPage *secPage, QWidget *parent)
     : QDialog(parent)
@@ -18,5 +19,6 @@ aboutUs::~aboutUs()
 void aboutUs::on_back_clicked()
 {
     _secPage->show();  // Show the SecPage dialog again
+    Sleep(70);
     this->hide();      // Hide the aboutUs dialog
 }

@@ -1,6 +1,7 @@
 #include "aboutproj.h"
 #include "ui_aboutproj.h"
 #include "secpage.h"
+#include <windows.h>
 
 
 AboutProj::AboutProj(SecPage *secPage, QWidget *parent)
@@ -19,5 +20,6 @@ AboutProj::~AboutProj()
 void AboutProj::on_back_clicked()
 {
     _secPage->show();  // Show the SecPage dialog again
+    Sleep(50);
     this->hide();      // Hide the AboutProj dialog
 }

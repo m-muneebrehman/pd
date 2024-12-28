@@ -27,7 +27,7 @@ void Demo::on_palagiarismP_clicked()
 {
     palagiarism = new Palagiarism(this);
     palagiarism->show();
-    Sleep(500);
+    Sleep(70);
     hide();
 
 }
@@ -36,6 +36,6 @@ void Demo::on_back_clicked()
 {
 
     _secPage->show();  // Show the SecPage dialog again
-    Sleep(500);
+    Sleep(70);
     this->hide();      // Hide the Demo dialog
 }

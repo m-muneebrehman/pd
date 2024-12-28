@@ -18,7 +18,7 @@ void SecPage::on_Aboutus_clicked()
 {
     Aboutus = new aboutUs(this);
     Aboutus->show();
-    Sleep(500);
+    Sleep(10);
     hide();
 }
 
@@ -27,7 +27,7 @@ void SecPage::on_Aboutpro_clicked()
 {
     aboutProj = new AboutProj(this);
     aboutProj->show();
-    Sleep(200);
+    Sleep(10);
     hide();
 }
 
@@ -36,7 +36,7 @@ void SecPage::on_Demo_clicked()
 {
     demo = new Demo(this);
     demo->show();
-    Sleep(200);
+    Sleep(10);
     hide();
 }
 

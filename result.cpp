@@ -180,6 +180,5 @@ void Result::displayResults(const std::vector<float> &scores, const std::vector<
 void Result::on_back_clicked()
 {
     _palagarism->show();
-    Sleep(500);
     this->hide();
 }
