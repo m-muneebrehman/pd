@@ -108,6 +108,6 @@ void Palagiarism::on_test_clicked()
 void Palagiarism::on_back_clicked()
 {
     _demo->show();      // Show the Demo window again
-    Sleep(70);
+    Sleep(50);
     this->hide();       // Hide the current window (Plagiarism)
 }

@@ -32,7 +32,7 @@ private:
 
     // Helper methods for processing
     void processTargetFile(const std::string &targetFile);
-    void displayResults(const std::vector<float> &scores, const std::vector<std::string> &matches);
+    void displayResults(const std::string& targetFile, const std::vector<float>& scores, const std::vector<std::string>& matches);  // Updated signature
     void moveFileToDatabase(const std::string &filePath);  // New method for moving file to database folder
 
     // Globals instance

@@ -1,4 +1,3 @@
-#include "result.h"
 #include "ui_result.h"
 #include <dirent.h>
 #include <iomanip>
@@ -112,25 +111,16 @@ void Result::processTargetFile(const std::string &targetFile)
                     float temp;
 
                     temp = tst.tokenizeTest(databaseTokens, targetTokens, mGlobals.stopwords_file);
-                    if (scores[0] < temp)
-                    {
-                        scores[0] = temp;
-                        matches.push_back(dir_object->d_name);
-                    }
+                    scores[0] = max(scores[0], temp);
+                    matches.push_back(dir_object->d_name);
 
                     temp = tst.ngramTest(databaseTokens, targetTokens);
-                    if (scores[1] < temp)
-                    {
-                        scores[1] = temp;
-                        matches.push_back(dir_object->d_name);
-                    }
+                    scores[1] = max(scores[1], temp);
+                    matches.push_back(dir_object->d_name);
 
                     temp = tst.cosineTest(databaseTokens, targetTokens, mGlobals.stopwords_file);
-                    if (scores[2] < temp)
-                    {
-                        scores[2] = temp;
-                        matches.push_back(dir_object->d_name);
-                    }
+                    scores[2] = max(scores[2], temp);
+                    matches.push_back(dir_object->d_name);
                 } catch (const exception &e) {
                     cerr << "Error during plagiarism test for file: " << baseFile << ". Error: " << e.what() << endl;
                     continue;
@@ -140,7 +130,7 @@ void Result::processTargetFile(const std::string &targetFile)
         closedir(dirB);
     }
 
-    displayResults(scores, matches);
+    displayResults(targetFile, scores, matches);
     moveFileToDatabase(targetFile);  // Move file after processing
 }
 
@@ -159,77 +149,59 @@ void Result::moveFileToDatabase(const std::string &filePath)
     }
 }
 
-void Result::displayResults(const std::vector<float> &scores, const std::vector<std::string> &matches)
+void Result::displayResults(const std::string &targetFile, const std::vector<float> &scores, const std::vector<std::string> &matches)
 {
     calculations c;
-    vector<int> weights(scores.size(), 0);
-
-    // Define weights for tests
-    weights[0] = 3; // Weight for first test
-    weights[1] = 4; // Weight for second test
-    weights[2] = 3; // Weight for third test
+    vector<int> weights = {3, 4, 3};
 
     // Calculate the final score
     float finalScore = (scores[0] * weights[0] + scores[1] * weights[1] + scores[2] * weights[2]) / c.sum(weights);
+    float percentageScore = (finalScore / 10.0) * 100.0; // Assuming score is out of 10
 
-    // Determine verdict
-    string verdict;
-    if (finalScore < 1)
-        verdict = "Not plagiarised";
-    else if (finalScore < 5)
-        verdict = "Slightly plagiarised";
-    else if (finalScore < 8)
-        verdict = "Fairly plagiarised";
-    else
-        verdict = "Highly plagiarised";
-
-    // Deduplicate matching results
+    // Deduplicate and organize matching results
     vector<string> uniqueMatches = matches;
     uniqueMatches.erase(remove(uniqueMatches.begin(), uniqueMatches.end(), ""), uniqueMatches.end());
     sort(uniqueMatches.begin(), uniqueMatches.end());
     uniqueMatches.erase(unique(uniqueMatches.begin(), uniqueMatches.end()), uniqueMatches.end());
 
-    // Terminal Output
-    cout << "********************************************" << endl;
-    cout << "\tFinal score: " << finalScore << endl;
-    cout << "\tVerdict: " << verdict << endl;
-    if (verdict != "Not plagiarised") {
-        cout << "\tMatch found in:" << endl;
-        if (uniqueMatches.empty())
-            cout << "\t-nil-" << endl;
-        else {
-            for (const auto &file : uniqueMatches)
-                cout << "\t\t" << file << endl;
-        }
+    // Generate detailed match information
+    stringstream matchDetails;
+    for (const auto &file : uniqueMatches) {
+        matchDetails << "\t- " << file << " (Tokenization: " << scores[0]
+                     << ", N-gram: " << scores[1] << ", Cosine: " << scores[2] << ")\n";
     }
-    cout << "********************************************" << endl;
+
+    // Output results to console
+    cout << "********************************************\n"
+         << "\tFinal Score: " << fixed << setprecision(2) << finalScore << "\n"
+         << "\tPercentage: " << fixed << setprecision(2) << percentageScore << "%\n"
+         << "\tVerdict: " << (finalScore < 1 ? "Not plagiarised" : finalScore < 5 ? "Slightly plagiarised"
+                                                               : finalScore < 8 ? "Fairly plagiarised"
+                                                                                  : "Highly plagiarised")
+         << "\n\tMatched Files:\n"
+         << (uniqueMatches.empty() ? "\t-nil-\n" : matchDetails.str())
+         << "********************************************\n";
 
     // GUI Output
     QString resultText = QString("********************************************\n"
-                                 "\tFinal score: %1\n"
-                                 "\tVerdict: %2\n")
+                                 "\tFinal Score: %1\n"
+                                 "\tPercentage: %2\n"
+                                 "\tVerdict: %3\n"
+                                 "\tMatched Files:\n%4"
+                                 "********************************************")
                              .arg(QString::number(finalScore, 'f', 2))
-                             .arg(QString::fromStdString(verdict));
+                             .arg(QString::number(percentageScore, 'f', 2))
+                             .arg(QString::fromStdString(finalScore < 1 ? "Not plagiarised" : finalScore < 5 ? "Slightly plagiarised"
+                                                                                          : finalScore < 8 ? "Fairly plagiarised"
+                                                                                                             : "Highly plagiarised"))
+                             .arg(uniqueMatches.empty() ? "\t-nil-\n" : QString::fromStdString(matchDetails.str()));
 
-    if (verdict != "Not plagiarised") {
-        resultText += "\tMatch found in:\n";
-        if (uniqueMatches.empty())
-            resultText += "\t-nil-\n";
-        else {
-            for (const auto &file : uniqueMatches)
-                resultText += QString("\t\t%1\n").arg(QString::fromStdString(file));
-        }
-    }
-
-    resultText += "********************************************";
-
-    // Update QLabel on GUI
     ui->result->setText(resultText);
 }
 
 void Result::on_back_clicked()
 {
     _palagarism->show();
-    Sleep(70);
+    Sleep(50);
     this->hide();
 }
