@@ -14,24 +14,146 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QDialog{
-border-image: url(:/images/aboutus.png) 0 0 0 0 stretch stretch;}QPushButton{
- background: transparent;
-    border: none;
-    /* Optional: Remove text */
-    color: transparent;}</string>
+   <string notr="true">/* Dialog with a gradient background for a futuristic feel */
+QDialog {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
+                                stop:0 #2c3e50, stop:1 #4ca1af); /* Gradient */
+    font-family: 'Cyber Alert', sans-serif; /* Cyber Alert font family */
+    color: #ecf0f1; /* Light text for contrast */
+    border-radius: 12px; /* Rounded edges */
+}
+
+/* Style for labels with neon effect */
+QLabel {
+    color: #00ffcc; /* Neon aqua */
+    font-size: 24px; /* Increased font size */
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0px 0px 8px rgba(0, 255, 204, 0.8), /* Outer neon glow */
+                 0px 0px 4px rgba(0, 255, 204, 0.6); /* Inner glow */
+    font-family: 'Cyber Alert', sans-serif; /* Cyber Alert font */
+}
+
+/* Style for buttons */
+QPushButton {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
+                                stop:0 #1f4037, stop:1 #99f2c8); /* Gradient background */
+    color: #1c2833; /* Dark text */
+    border: none; /* No border */
+    border-radius: 20px; /* Rounded edges */
+    padding: 12px 24px; /* Adjusted padding for larger button */
+    font-size: 20px; /* Increased font size */
+    font-weight: bold;
+    font-family: 'Cyber Alert', sans-serif; /* Cyber Alert font */
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.3); /* Glow effect */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect for buttons */
+QPushButton:hover {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
+                                stop:0 #34e89e, stop:1 #0f3443); /* Vibrant gradient */
+    transform: scale(1.1); /* Slightly enlarge */
+    box-shadow: 0px 10px 15px rgba(0, 255, 170, 0.7); /* Neon glow */
+    color: #ecf0f1; /* Switch text to light for contrast */
+}
+
+/* Style for line edits */
+QLineEdit {
+    background-color: #1c2833; /* Dark background */
+    color: #ecf0f1; /* Light text */
+    border: 2px solid #00d1b2; /* Neon border */
+    border-radius: 12px; /* Adjusted for smaller size */
+    padding: 8px 12px; /* Adjusted padding for larger input */
+    font-size: 30px; /* Increased font size */
+    font-family: 'Cyber Alert', sans-serif; /* Cyber Alert font */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Focus effect for line edits */
+QLineEdit:focus {
+    border-color: #34e89e; /* Change border color when focused */
+    box-shadow: 0px 0px 10px rgba(52, 232, 158, 0.8); /* Neon glow on focus */
+}
+</string>
   </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>20</y>
+     <width>221</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cyber Alert</family>
+     <pointsize>-1</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">*{
+font-size: 26px; /* Increased font size */}</string>
+   </property>
+   <property name="text">
+    <string># About Us</string>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::TextFormat::MarkdownText</enum>
+   </property>
+  </widget>
   <widget class="QPushButton" name="back">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>120</y>
-     <width>51</width>
-     <height>51</height>
+     <x>20</x>
+     <y>30</y>
+     <width>141</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
     <string>BACK</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Info">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>120</y>
+     <width>781</width>
+     <height>351</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">*{
+font-size: 20px; /* Increased font size */}</string>
+   </property>
+   <property name="text">
+    <string># Project Team Structure
+
+## Team Members
+
+1. **Muhammad Muneeb** - **Group Leader**
+   - Responsible for overall project management and coordination.
+   - Oversaw the progress and ensured deadlines are met.
+
+2. **Muaaz Waseem** - **UI Designer**
+   - Designed the user interface for the application.
+   - Focused on creating an intuitive and visually appealing user experience.
+
+3. **Hafiz Muhammad Salman** - **Backend Developer**
+   - Developed and managed the backend logic .
+
+Together, we collaborated to deliver this successful and well-rounded project!
+</string>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::TextFormat::MarkdownText</enum>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>
