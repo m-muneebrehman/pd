@@ -14,163 +14,19 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">/* Main window with a gradient background */
-QMainWindow {
-    background: qlineargradient(to bottom right, #1E2A38, #3A506B); /* Subtle gradient */
-    font-family: 'Arial', sans-serif; /* Clean, modern font */
-    color: #F4F4F9; /* Light text for contrast */
-    border: none; /* Ensure no unwanted borders appear */
-}
-
-/* Style for labels */
-QLabel {
-    color: #F4F4F9; /* Light text */
-    font-size: 28px; /* Adjusted for better visibility */
-    font-weight: bold; /* Slight emphasis */
-    text-align: center;
-}
-
-/* Title-specific styling */
-QLabel#title {
-    font-size: 36px; /* Emphasized title */
-    color: #00D4FF; /* Eye-catching neon blue */
-    margin-top: 20px; /* Added spacing if needed */
-}
-
-/* Style for buttons */
-QPushButton {
-    background: qlineargradient(to bottom, #007BFF, #0056B3); /* Modern blue gradient */
-    color: #FFFFFF; /* White text for readability */
-    border: none; /* No border for minimalism */
-    border-radius: 10px; /* Soft corners */
-    padding: 10px 20px; /* Comfortable padding */
-    font-size: 18px; /* Appropriately sized font */
-    font-weight: bold; /* Emphasize button text */
-    margin-top: 20px; /* Space from other elements */
-}
-
-/* Hover effect for buttons */
-QPushButton:hover {
-    background: qlineargradient(to bottom, #0056B3, #003B73); /* Darker blue on hover */
-    color: #F4F4F9; /* Light text */
-    cursor: pointer; /* Change cursor to pointer for hover effect */
-}
-
-/* Disable QPushButton default focus outline */
-QPushButton:focus {
-    outline: none;
-}
-
-/* Style for line edits */
-QLineEdit {
-    background-color: #2C3E50; /* Dark input box */
-    color: #F4F4F9; /* Light text */
-    border: 2px solid #00D4FF; /* Neon blue border */
-    border-radius: 8px; /* Soft corners */
-    padding: 8px; /* Comfortable padding */
-    font-size: 16px; /* Legible text */
-}
-
-/* Focus effect for line edits */
-QLineEdit:focus {
-    border-color: #007BFF; /* Brighter blue on focus */
-    outline: none; /* Remove default focus outline */
-}
-
-/* General adjustments */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
-    <string notr="true">/* Main window with a gradient background */
-QMainWindow {
-    background: qlineargradient(to bottom right, #1E2A38, #3A506B); /* Subtle gradient */
-    font-family: 'Arial', sans-serif; /* Clean, modern font */
-    color: #F4F4F9; /* Light text for contrast */
-}
-
-/* Style for labels (minimalistic design) */
-QLabel {
-    color: #F4F4F9; /* Light text */
-    font-size: 24px; /* Clean size */
-    font-weight: bold; /* Slight emphasis */
-    text-align: center;
-}
-
-/* Title-specific styling */
-QLabel#title {
-    font-size: 32px; /* Emphasized title */
-    color: #00D4FF; /* Eye-catching neon blue */
-}
-
-/* Style for buttons */
-QPushButton {
-    background: qlineargradient(to bottom, #007BFF, #0056B3); /* Modern blue gradient */
-    color: #FFFFFF; /* White text for readability */
-    border: none; /* No border for minimalism */
-    border-radius: 10px; /* Soft corners */
-    padding: 10px 20px; /* Comfortable padding */
-    font-size: 18px; /* Appropriately sized font */
-    font-weight: bold; /* Emphasize button text */
-}
-
-/* Hover effect for buttons */
-QPushButton:hover {
-    background: qlineargradient(to bottom, #0056B3, #003B73); /* Darker blue on hover */
-    color: #F4F4F9; /* Light text */
-}
-
-/* Style for line edits */
-QLineEdit {
-    background-color: #2C3E50; /* Dark input box */
-    color: #F4F4F9; /* Light text */
-    border: 2px solid #00D4FF; /* Neon blue border */
-    border-radius: 8px; /* Soft corners */
-    padding: 8px; /* Comfortable padding */
-    font-size: 16px; /* Legible text */
-}
-
-/* Focus effect for line edits */
-QLineEdit:focus {
-    border-color: #007BFF; /* Brighter blue on focus */
-    outline: none; /* Remove default focus outline */
-}
-
-/* Style for QListWidget */
-QListWidget {
-    background-color: #2C3E50; /* Dark background */
-    color: #F4F4F9; /* Light text */
-    border: none; /* Minimalist design */
-    border-radius: 8px; /* Rounded edges */
-    padding: 8px; /* Comfortable spacing */
-    font-size: 16px; /* Clean font size */
-}
-
-/* Style for selected items in QListWidget */
-QListWidget::item:selected {
-    background-color: #00D4FF; /* Highlight color */
-    color: #FFFFFF; /* Text color for contrast */
-}
-
-/* Hover effect for QListWidget items */
-QListWidget::item:hover {
-    background-color: #007BFF; /* Subtle blue hover effect */
-    color: #FFFFFF; /* Light text */
-}
-</string>
+    <string notr="true"/>
    </property>
    <widget class="QLabel" name="title">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>120</y>
-      <width>681</width>
-      <height>141</height>
+      <x>0</x>
+      <y>0</y>
+      <width>801</width>
+      <height>601</height>
      </rect>
     </property>
     <property name="font">
@@ -186,17 +42,20 @@ font-size: 36px; /* Increased font size */
 }</string>
     </property>
     <property name="text">
-     <string># Plagiarism Detector</string>
+     <string/>
     </property>
     <property name="textFormat">
      <enum>Qt::TextFormat::MarkdownText</enum>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>310</y>
+      <x>580</x>
+      <y>240</y>
       <width>201</width>
       <height>51</height>
      </rect>

@@ -14,15 +14,20 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">QDialog{
+border-image: url(:/images/aboutus.png) 0 0 0 0 stretch stretch;}QPushButton{
+ background: transparent;
+    border: none;
+    /* Optional: Remove text */
+    color: transparent;}</string>
   </property>
   <widget class="QPushButton" name="back">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>30</y>
-     <width>141</width>
-     <height>41</height>
+     <x>30</x>
+     <y>120</y>
+     <width>51</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="text">
