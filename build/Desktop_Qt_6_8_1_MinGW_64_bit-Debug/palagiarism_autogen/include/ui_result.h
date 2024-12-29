@@ -101,7 +101,8 @@ public:
         title->setGeometry(QRect(360, 50, 111, 16));
         result = new QLabel(Result);
         result->setObjectName("result");
-        result->setGeometry(QRect(260, 140, 361, 261));
+        result->setGeometry(QRect(140, 130, 501, 261));
+        result->setWordWrap(true);
 
         retranslateUi(Result);
 

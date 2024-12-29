@@ -36,6 +36,6 @@ void Demo::on_back_clicked()
 {
 
     _secPage->show();  // Show the SecPage dialog again
-    Sleep(70);
+    Sleep(50);
     this->hide();      // Hide the Demo dialog
 }
