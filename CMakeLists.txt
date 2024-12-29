@@ -36,6 +36,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         stringOperations.h
         verdict.h
         tests.h
+        aboutproj.png aboutus.png demo.png main.png Plagiarism.png result.png sec.png
+
     )
 else()
     if(ANDROID)

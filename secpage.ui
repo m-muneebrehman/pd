@@ -21,57 +21,8 @@
   </property>
   <property name="styleSheet">
    <string notr="true">/* Dialog with a gradient background for a futuristic feel */
-QDialog {
-    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
-                                stop:0 #2c3e50, stop:1 #4ca1af); /* Gradient */
-    font-family: 'Cyber Alert', sans-serif; /* Cyber Alert font family */
-    color: #ecf0f1; /* Light text for contrast */
-    border-radius: 12px; /* Rounded edges */
-}
-
-/* Style for labels with neon effect */
-QLabel {
-    color: #00ffcc; /* Neon aqua */
-    font-size: 18px; /* Reduced font size */
-    font-weight: bold;
-    text-align: center;
-    font-family: 'Cyber Alert', sans-serif; /* Cyber Alert font */
-}
-
-/* Style for buttons */
-QPushButton {
-    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
-                                stop:0 #1f4037, stop:1 #99f2c8); /* Gradient background */
-    color: #1c2833; /* Dark text */
-    border: none; /* No border */
-    border-radius: 20px; /* Rounded edges */
-    padding: 10px 20px; /* Adjusted padding for smaller button */
-    font-size: 20px; /* Reduced font size */
-    font-weight: bold;
-    font-family: 'Brittanic', sans-serif; /* Brittanic font for buttons */
-}
-
-/* Hover effect for buttons */
-QPushButton:hover {
-    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
-                                stop:0 #34e89e, stop:1 #0f3443); /* Vibrant gradient */
-    color: #ecf0f1; /* Switch text to light for contrast */
-}
-
-/* Style for line edits */
-QLineEdit {
-    background-color: #1c2833; /* Dark background */
-    color: #ecf0f1; /* Light text */
-    border: 2px solid #00d1b2; /* Neon border */
-    border-radius: 12px; /* Adjusted for smaller size */
-    padding: 6px 10px; /* Adjusted padding for smaller input */
-    font-size: 16px; /* Reduced font size */
-    font-family: 'Cyber Alert', sans-serif; /* Cyber Alert font */
-}
-
-/* Focus effect for line edits */
-QLineEdit:focus {
-    border-color: #34e89e; /* Change border color when focused */
+QWidget {
+    background-image : url(:./sec.png);
 }
 </string>
   </property>
@@ -91,8 +42,8 @@ QLineEdit:focus {
   <widget class="QPushButton" name="Aboutpro">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>250</y>
+     <x>40</x>
+     <y>140</y>
      <width>181</width>
      <height>71</height>
     </rect>
@@ -100,7 +51,7 @@ QLineEdit:focus {
    <property name="font">
     <font>
      <family>Brittanic</family>
-     <pointsize>-1</pointsize>
+     <pointsize>9</pointsize>
      <bold>true</bold>
     </font>
    </property>
@@ -119,6 +70,19 @@ QLineEdit:focus {
    </property>
    <property name="text">
     <string>Demo</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>0</y>
+     <width>421</width>
+     <height>201</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
    </property>
   </widget>
  </widget>
