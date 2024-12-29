@@ -1,81 +1,31 @@
 # ninja log v6
-405	17506	7571719646112801	CMakeFiles/palagiarism.dir/palagiarism.cpp.obj	e3b9eca187d66f17
-392	16775	7571719645986937	CMakeFiles/palagiarism.dir/aboutus.cpp.obj	4364d4329df28aca
-16775	25058	7571719809779851	CMakeFiles/palagiarism.dir/aboutproj.cpp.obj	b3d18528ab110a25
-76	382	7571719642786040	palagiarism_autogen/timestamp	db800a8e84a2876a
-76	382	7571719642786040	D:/DSA Project/pd/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/palagiarism_autogen/timestamp	db800a8e84a2876a
-4531	15862	7571033801730965	CMakeFiles/palagiarism.dir/palagiarism_autogen/mocs_compilation.cpp.obj	f81f483077d0aa35
-76	382	7571719642786040	palagiarism_autogen/mocs_compilation.cpp	db800a8e84a2876a
-4535	15424	7571033801771224	CMakeFiles/palagiarism.dir/main.cpp.obj	19f114b4e360652c
-76	382	7571719642786040	D:/DSA Project/pd/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/palagiarism_autogen/mocs_compilation.cpp	db800a8e84a2876a
-383	11973	7571719645901583	CMakeFiles/palagiarism.dir/mainwindow.cpp.obj	a05e152b8194881
-397	16842	7571719646035010	CMakeFiles/palagiarism.dir/demo.cpp.obj	aa1ed87e5d6c01a3
-387	16839	7571719645944615	CMakeFiles/palagiarism.dir/secpage.cpp.obj	7c0eba5abff25ea8
-401	17688	7571719646081476	CMakeFiles/palagiarism.dir/database.cpp.obj	32f5e02ebb883895
-11973	23949	7571719761785536	CMakeFiles/palagiarism.dir/result.cpp.obj	356d504b1b9cabbc
-25058	26139	7571719892651653	palagiarism.exe	ce43fb450ba55b24
-59	305	7571721951520183	palagiarism_autogen/timestamp	db800a8e84a2876a
-59	305	7571721951520183	palagiarism_autogen/mocs_compilation.cpp	db800a8e84a2876a
-59	305	7571721951520183	D:/DSA Project/pd/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/palagiarism_autogen/timestamp	db800a8e84a2876a
-59	305	7571721951520183	D:/DSA Project/pd/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/palagiarism_autogen/mocs_compilation.cpp	db800a8e84a2876a
-306	11803	7571721954003925	CMakeFiles/palagiarism.dir/mainwindow.cpp.obj	a05e152b8194881
-310	16362	7571721954030868	CMakeFiles/palagiarism.dir/secpage.cpp.obj	7c0eba5abff25ea8
-314	16416	7571721954080954	CMakeFiles/palagiarism.dir/aboutus.cpp.obj	4364d4329df28aca
-319	16615	7571721954119036	CMakeFiles/palagiarism.dir/demo.cpp.obj	aa1ed87e5d6c01a3
-323	16974	7571721954170017	CMakeFiles/palagiarism.dir/database.cpp.obj	32f5e02ebb883895
-327	17104	7571721954216557	CMakeFiles/palagiarism.dir/palagiarism.cpp.obj	e3b9eca187d66f17
-11804	23086	7571722068958759	CMakeFiles/palagiarism.dir/result.cpp.obj	356d504b1b9cabbc
-16362	24151	7571722114539210	CMakeFiles/palagiarism.dir/aboutproj.cpp.obj	b3d18528ab110a25
-24151	25096	7571722192451182	palagiarism.exe	ce43fb450ba55b24
-78	388	7571725437363238	palagiarism_autogen/timestamp	db800a8e84a2876a
-78	388	7571725437363238	palagiarism_autogen/mocs_compilation.cpp	db800a8e84a2876a
-78	388	7571725437363238	D:/DSA Project/pd/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/palagiarism_autogen/timestamp	db800a8e84a2876a
-78	388	7571725437363238	D:/DSA Project/pd/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/palagiarism_autogen/mocs_compilation.cpp	db800a8e84a2876a
-390	19554	7571725440469655	CMakeFiles/palagiarism.dir/mainwindow.cpp.obj	a05e152b8194881
-394	27603	7571725440517525	CMakeFiles/palagiarism.dir/secpage.cpp.obj	7c0eba5abff25ea8
-398	27869	7571725440558130	CMakeFiles/palagiarism.dir/aboutus.cpp.obj	4364d4329df28aca
-402	27938	7571725440604690	CMakeFiles/palagiarism.dir/demo.cpp.obj	aa1ed87e5d6c01a3
-407	28428	7571725440646941	CMakeFiles/palagiarism.dir/database.cpp.obj	32f5e02ebb883895
-411	28448	7571725440690325	CMakeFiles/palagiarism.dir/palagiarism.cpp.obj	e3b9eca187d66f17
-27603	37087	7571725712593923	CMakeFiles/palagiarism.dir/aboutproj.cpp.obj	b3d18528ab110a25
-70	3665	7571728428069999	palagiarism_autogen/timestamp	db800a8e84a2876a
-70	3665	7571728428069999	palagiarism_autogen/mocs_compilation.cpp	db800a8e84a2876a
-70	3665	7571728428069999	D:/DSA Project/pd/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/palagiarism_autogen/timestamp	db800a8e84a2876a
-70	3665	7571728428069999	D:/DSA Project/pd/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/palagiarism_autogen/mocs_compilation.cpp	db800a8e84a2876a
-3671	15294	7571728429216759	CMakeFiles/palagiarism.dir/main.cpp.obj	19f114b4e360652c
-3675	15627	7571728429261325	CMakeFiles/palagiarism.dir/mainwindow.cpp.obj	a05e152b8194881
-3667	15806	7571728429177643	CMakeFiles/palagiarism.dir/palagiarism_autogen/mocs_compilation.cpp.obj	f81f483077d0aa35
-3684	20448	7571728429349358	CMakeFiles/palagiarism.dir/aboutus.cpp.obj	4364d4329df28aca
-3688	20478	7571728429396541	CMakeFiles/palagiarism.dir/demo.cpp.obj	aa1ed87e5d6c01a3
-3680	20568	7571728429295488	CMakeFiles/palagiarism.dir/secpage.cpp.obj	7c0eba5abff25ea8
-15294	28673	7571728545443468	CMakeFiles/palagiarism.dir/database.cpp.obj	32f5e02ebb883895
-15628	28846	7571728548786800	CMakeFiles/palagiarism.dir/palagiarism.cpp.obj	e3b9eca187d66f17
-15806	29394	7571728550557089	CMakeFiles/palagiarism.dir/result.cpp.obj	356d504b1b9cabbc
-20449	30645	7571728596940393	CMakeFiles/palagiarism.dir/aboutproj.cpp.obj	b3d18528ab110a25
-30645	31768	7571728698959377	palagiarism.exe	ce43fb450ba55b24
-20	298	7571737569406278	palagiarism_autogen/timestamp	db800a8e84a2876a
-20	298	7571737569406278	palagiarism_autogen/mocs_compilation.cpp	db800a8e84a2876a
-20	298	7571737569406278	D:/DSA Project/pd/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/palagiarism_autogen/timestamp	db800a8e84a2876a
-20	298	7571737569406278	D:/DSA Project/pd/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/palagiarism_autogen/mocs_compilation.cpp	db800a8e84a2876a
-299	11230	7571737572198844	CMakeFiles/palagiarism.dir/mainwindow.cpp.obj	a05e152b8194881
-302	15411	7571737572228720	CMakeFiles/palagiarism.dir/secpage.cpp.obj	7c0eba5abff25ea8
-306	15467	7571737572268620	CMakeFiles/palagiarism.dir/aboutus.cpp.obj	4364d4329df28aca
-310	15492	7571737572308517	CMakeFiles/palagiarism.dir/demo.cpp.obj	aa1ed87e5d6c01a3
-319	16134	7571737572398269	CMakeFiles/palagiarism.dir/palagiarism.cpp.obj	e3b9eca187d66f17
-315	16179	7571737572358374	CMakeFiles/palagiarism.dir/database.cpp.obj	32f5e02ebb883895
-11230	23118	7571737681418848	CMakeFiles/palagiarism.dir/result.cpp.obj	356d504b1b9cabbc
-15412	23377	7571737723323039	CMakeFiles/palagiarism.dir/aboutproj.cpp.obj	b3d18528ab110a25
-23377	24447	7571737802988110	palagiarism.exe	ce43fb450ba55b24
-45	245	7571740682973880	palagiarism_autogen/timestamp	db800a8e84a2876a
-45	245	7571740682973880	palagiarism_autogen/mocs_compilation.cpp	db800a8e84a2876a
-45	245	7571740682973880	D:/DSA Project/pd/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/palagiarism_autogen/timestamp	db800a8e84a2876a
-45	245	7571740682973880	D:/DSA Project/pd/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/palagiarism_autogen/mocs_compilation.cpp	db800a8e84a2876a
-246	10323	7571740684992591	CMakeFiles/palagiarism.dir/mainwindow.cpp.obj	a05e152b8194881
-254	14402	7571740685062408	CMakeFiles/palagiarism.dir/aboutus.cpp.obj	4364d4329df28aca
-258	14494	7571740685102298	CMakeFiles/palagiarism.dir/demo.cpp.obj	aa1ed87e5d6c01a3
-250	14513	7571740685022530	CMakeFiles/palagiarism.dir/secpage.cpp.obj	7c0eba5abff25ea8
-262	14829	7571740685142187	CMakeFiles/palagiarism.dir/database.cpp.obj	32f5e02ebb883895
-266	15010	7571740685192053	CMakeFiles/palagiarism.dir/palagiarism.cpp.obj	e3b9eca187d66f17
-10323	20589	7571740785759687	CMakeFiles/palagiarism.dir/result.cpp.obj	356d504b1b9cabbc
-14402	21700	7571740826544487	CMakeFiles/palagiarism.dir/aboutproj.cpp.obj	b3d18528ab110a25
-21700	22641	7571740899533776	palagiarism.exe	ce43fb450ba55b24
+18685	27029	7571923670500273	CMakeFiles/palagiarism.dir/aboutproj.cpp.obj	b3d18528ab110a25
+23	379	7571923483876359	palagiarism_autogen/timestamp	db800a8e84a2876a
+23	379	7571923483876359	D:/DSA Project/pd/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/palagiarism_autogen/timestamp	db800a8e84a2876a
+403	19704	7571923487676805	CMakeFiles/palagiarism.dir/palagiarism.cpp.obj	e3b9eca187d66f17
+389	19188	7571923487524513	CMakeFiles/palagiarism.dir/aboutus.cpp.obj	4364d4329df28aca
+23	379	7571923483876359	palagiarism_autogen/mocs_compilation.cpp	db800a8e84a2876a
+4579	18260	7571915427528294	CMakeFiles/palagiarism.dir/main.cpp.obj	19f114b4e360652c
+4575	18295	7571915427488422	CMakeFiles/palagiarism.dir/palagiarism_autogen/mocs_compilation.cpp.obj	f81f483077d0aa35
+23	379	7571923483876359	D:/DSA Project/pd/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/palagiarism_autogen/mocs_compilation.cpp	db800a8e84a2876a
+380	13333	7571923487444733	CMakeFiles/palagiarism.dir/mainwindow.cpp.obj	a05e152b8194881
+394	18976	7571923487575825	CMakeFiles/palagiarism.dir/demo.cpp.obj	aa1ed87e5d6c01a3
+384	18685	7571923487484625	CMakeFiles/palagiarism.dir/secpage.cpp.obj	7c0eba5abff25ea8
+398	19562	7571923487631007	CMakeFiles/palagiarism.dir/database.cpp.obj	32f5e02ebb883895
+18358	33135	7571915565324397	CMakeFiles/palagiarism.dir/result.cpp.obj	356d504b1b9cabbc
+34693	36409	7571915728680815	palagiarism.exe	ce43fb450ba55b24
+86	3445	7571925082550198	palagiarism_autogen/timestamp	db800a8e84a2876a
+86	3445	7571925082550198	palagiarism_autogen/mocs_compilation.cpp	db800a8e84a2876a
+86	3445	7571925082550198	D:/DSA Project/pd/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/palagiarism_autogen/timestamp	db800a8e84a2876a
+86	3445	7571925082550198	D:/DSA Project/pd/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/palagiarism_autogen/mocs_compilation.cpp	db800a8e84a2876a
+3450	15325	7571925083666814	CMakeFiles/palagiarism.dir/main.cpp.obj	19f114b4e360652c
+3446	15382	7571925083626944	CMakeFiles/palagiarism.dir/palagiarism_autogen/mocs_compilation.cpp.obj	f81f483077d0aa35
+3455	15478	7571925083716677	CMakeFiles/palagiarism.dir/mainwindow.cpp.obj	a05e152b8194881
+3459	20562	7571925083756567	CMakeFiles/palagiarism.dir/secpage.cpp.obj	7c0eba5abff25ea8
+3468	20674	7571925083847112	CMakeFiles/palagiarism.dir/demo.cpp.obj	aa1ed87e5d6c01a3
+3464	20806	7571925083806427	CMakeFiles/palagiarism.dir/aboutus.cpp.obj	4364d4329df28aca
+15383	28982	7571925202994970	CMakeFiles/palagiarism.dir/palagiarism.cpp.obj	e3b9eca187d66f17
+15325	29060	7571925202420497	CMakeFiles/palagiarism.dir/database.cpp.obj	32f5e02ebb883895
+15478	29545	7571925203951398	CMakeFiles/palagiarism.dir/result.cpp.obj	356d504b1b9cabbc
+20563	30913	7571925254793499	CMakeFiles/palagiarism.dir/aboutproj.cpp.obj	b3d18528ab110a25
+30913	32038	7571925358296025	palagiarism.exe	ce43fb450ba55b24

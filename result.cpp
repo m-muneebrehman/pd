@@ -54,7 +54,8 @@ void Result::runPlagiarismCheck()
                     string fileContent = sP.getFileData(targetFile);
                     if (fileContent.empty() || fileContent.size() < 6)
                     {
-                        cout << "Skipping empty or insufficient data file: " << dir_object->d_name << endl;
+                        displayEmptyFileResult(targetFile);
+                        remove(targetFile.c_str()); // Remove empty file from the target folder
                         continue;
                     }
 
@@ -146,7 +147,27 @@ void Result::moveFileToDatabase(const std::string &filePath)
         QMessageBox::information(this, "File Moved", "File has been moved to the database folder.");
     } else {
         QMessageBox::warning(this, "Error", "Failed to move the file to the database folder.");
+        remove(filePath.c_str()); // Remove the file from the target folder after failure
     }
+}
+
+void Result::displayEmptyFileResult(const std::string &filePath)
+{
+    QString resultText = QString("********************************************\n"
+                                 "\tFile: %1\n"
+                                 "\tStatus: Empty or Insufficient Data\n"
+                                 "\tVerdict: No plagiarism possible for an empty file.\n"
+                                 "********************************************")
+                             .arg(QString::fromStdString(filePath));
+
+    ui->result->setText(resultText);
+
+    // Output results to console
+    cout << "********************************************\n"
+         << "\tFile: " << filePath << "\n"
+         << "\tStatus: Empty or Insufficient Data\n"
+         << "\tVerdict: No plagiarism possible for an empty file.\n"
+         << "********************************************\n";
 }
 
 void Result::displayResults(const std::string &targetFile, const std::vector<float> &scores, const std::vector<std::string> &matches)
