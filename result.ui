@@ -106,14 +106,17 @@ QLineEdit:focus {
   <widget class="QLabel" name="result">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>140</y>
-     <width>361</width>
+     <x>140</x>
+     <y>130</y>
+     <width>501</width>
      <height>261</height>
     </rect>
    </property>
    <property name="text">
     <string>Display the result here </string>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>
