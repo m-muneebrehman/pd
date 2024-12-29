@@ -20,62 +20,105 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QDialog {
-border-image: url(:/images/sec.png) 0 0 0 0 stretch stretch;
+   <string notr="true">/* Dialog with a gradient background for a futuristic feel */
+QDialog {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
+                                stop:0 #2c3e50, stop:1 #4ca1af); /* Gradient */
+    font-family: 'Cyber Alert', sans-serif; /* Cyber Alert font family */
+    color: #ecf0f1; /* Light text for contrast */
+    border-radius: 12px; /* Rounded edges */
 }
 
-QPushButton{
-/* property to make it invivble*/
- background: transparent;
-    border: none;
-    /* Optional: Remove text */
-    color: transparent;}
+/* Style for labels with neon effect */
+QLabel {
+    color: #00ffcc; /* Neon aqua */
+    font-size: 18px; /* Reduced font size */
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Cyber Alert', sans-serif; /* Cyber Alert font */
+}
+
+/* Style for buttons */
+QPushButton {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
+                                stop:0 #1f4037, stop:1 #99f2c8); /* Gradient background */
+    color: #1c2833; /* Dark text */
+    border: none; /* No border */
+    border-radius: 20px; /* Rounded edges */
+    padding: 10px 20px; /* Adjusted padding for smaller button */
+    font-size: 20px; /* Reduced font size */
+    font-weight: bold;
+    font-family: 'Brittanic', sans-serif; /* Brittanic font for buttons */
+}
+
+/* Hover effect for buttons */
+QPushButton:hover {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
+                                stop:0 #34e89e, stop:1 #0f3443); /* Vibrant gradient */
+    color: #ecf0f1; /* Switch text to light for contrast */
+}
+
+/* Style for line edits */
+QLineEdit {
+    background-color: #1c2833; /* Dark background */
+    color: #ecf0f1; /* Light text */
+    border: 2px solid #00d1b2; /* Neon border */
+    border-radius: 12px; /* Adjusted for smaller size */
+    padding: 6px 10px; /* Adjusted padding for smaller input */
+    font-size: 16px; /* Reduced font size */
+    font-family: 'Cyber Alert', sans-serif; /* Cyber Alert font */
+}
+
+/* Focus effect for line edits */
+QLineEdit:focus {
+    border-color: #34e89e; /* Change border color when focused */
+}
 </string>
   </property>
   <widget class="QPushButton" name="Aboutus">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>280</y>
-     <width>201</width>
-     <height>41</height>
+     <x>310</x>
+     <y>250</y>
+     <width>181</width>
+     <height>71</height>
     </rect>
    </property>
    <property name="text">
-    <string/>
+    <string>About Us</string>
    </property>
   </widget>
   <widget class="QPushButton" name="Aboutpro">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>190</y>
-     <width>201</width>
-     <height>51</height>
+     <x>60</x>
+     <y>250</y>
+     <width>181</width>
+     <height>71</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>Brittanic</family>
-     <pointsize>9</pointsize>
+     <pointsize>-1</pointsize>
      <bold>true</bold>
     </font>
    </property>
    <property name="text">
-    <string/>
+    <string>About Project</string>
    </property>
   </widget>
   <widget class="QPushButton" name="Demo">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>360</y>
-     <width>201</width>
-     <height>51</height>
+     <x>570</x>
+     <y>250</y>
+     <width>181</width>
+     <height>71</height>
     </rect>
    </property>
    <property name="text">
-    <string/>
+    <string>Demo</string>
    </property>
   </widget>
  </widget>
